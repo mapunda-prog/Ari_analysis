@@ -16,7 +16,7 @@ usage() {
 }
 
 # Default values
-THREADS=10
+THREADS=300
 
 # Parse command-line arguments
 while [[ "$#" -gt 0 ]]; do
