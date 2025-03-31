@@ -3,8 +3,8 @@
 set -uex
 
 # Define variables
-input_dir="./"
-output_dir="./fastp_trim"
+input_dir="/tank/lmapunda/ARI/work_fastqs"
+output_dir="/tank/lmapunda/ARI/fastp_trim"
 mkdir -p $output_dir
 # iterate over forward read files
 for file1 in "${input_dir}"/*_R1.fastq.gz; do
@@ -27,7 +27,7 @@ for file1 in "${input_dir}"/*_R1.fastq.gz; do
           --qualified_quality_phred 30 \
           -f 15 \
           -F 15 \
-          --thread 14 \
+          --thread 100 \
           --html "${output_dir}/${filename}_report.html" \
           --json "${output_dir}/${filename}_report.json"
 
